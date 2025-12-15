@@ -24,7 +24,7 @@ class Vehiculo extends Model
     }
 
     public static function actualizarVehiculo($id, $data){
-         $vehiculo=self::find($id);
+        $vehiculo=self::find($id);
         if($vehiculo==null){
             return false;
         }

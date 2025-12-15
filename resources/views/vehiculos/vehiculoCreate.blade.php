@@ -2,7 +2,7 @@
 @section('titulo', 'Registrar Vehículo')
 @section('contenido')
     <div class="mb-3 text-center">
-        <h2 class="">Registrar Nuevo Vehículo</h2>
+        <h2 >Registrar Nuevo Vehículo</h2>
     </div>
 
     <form action="{{ route('vehiculos.store') }}" method="POST">

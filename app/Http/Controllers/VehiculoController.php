@@ -53,7 +53,7 @@ class VehiculoController extends Controller
      */
     public function edit(Vehiculo $vehiculo)
     {
-        //
+        return view('vehiculos.vehiculoEdit', compact('vehiculo'));
     }
 
     /**
@@ -61,7 +61,15 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, Vehiculo $vehiculo)
     {
-        //
+        $request->validate([
+            'placa'=>'required|string|max:10',
+            'tipo_id'=>'required',
+            'propietario' => 'required|string|max:100',
+            'observaciones' => 'nullable|string|max:255',
+        ]);
+        Vehiculo::actualizarVehiculo($vehiculo->id, $request->all());
+        return redirect()->route('vehiculos.index')
+            ->with('success','Vehiculo actualizado exitosamente.');
     }
 
     /**
@@ -69,6 +77,8 @@ class VehiculoController extends Controller
      */
     public function destroy(Vehiculo $vehiculo)
     {
-        //
+        Vehiculo::eliminarVehiculo($vehiculo->id);
+        return redirect()->route('vehiculos.index')
+        ->with('success','Vehiculo eliminado exitosamente.');
     }
 }
