@@ -30,4 +30,5 @@
         </div>
         <a href="{{route('vehiculos.index')}}"class="btn btn-danger">Cancelar</a>
         <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
 @endsection

@@ -3,19 +3,6 @@
 @section('contenido')
     <div class="mb-3 gap-2 d-flex">
         <a href="{{ route('vehiculos.create') }}"class="btn btn-outline-dark">Crear</a>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <form action="" class="d-flex" role="search">
-                    <input class="form-control me-2 w-200" type="search" placeholder="Search" aria-label="Search"/>
-                    <select name="parametro" class="form-select" required>
-                        <option value="">Buscar por</option>
-                        <option value="1">Placa</option>
-                        <option value="2">Tipo</option>
-                        <option value="3">Propietario</option>
-                    </select>
-                </form>
-            </div>
-        </nav>
 
     </div>
 
